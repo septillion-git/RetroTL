@@ -1,4 +1,4 @@
-update=5-4-2016 15:47:58
+update=5-9-2016 14:33:24
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,6 +25,16 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -64,13 +74,4 @@ LibName32=D:/DOCUMENTEN/KiCad/[]User Library/septillion_PowerSupply
 LibName33=D:/DOCUMENTEN/KiCad/[]User Library/septillion_DCDC-Modules
 LibName34=D:/DOCUMENTEN/KiCad/[]User Library/RM433
 LibName35=D:/DOCUMENTEN/KiCad/[]User Library/septillion_WirelessModules
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName36=D:/DOCUMENTEN/KiCad/[]User Library/[]MyElin/myelin-kicad-libraries/nRF24L01+
