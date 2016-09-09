@@ -78,7 +78,7 @@ U 1 1 56A3B8FF
 P 4200 2650
 F 0 "J1" H 4150 2650 60  0000 C CNN
 F 1 "Arduino_ProMini_Angeld_Header" H 4200 2775 60  0000 C CNN
-F 2 "septillion_Arduino:arduino_pro_mini_(angle)_header(RetroTL)" V 4150 2650 60  0001 C CNN
+F 2 "septillion_Arduino:Arduino_ProMini_Angeled_Small++" V 4150 2650 60  0001 C CNN
 F 3 "" V 4150 2650 60  0000 C CNN
 	1    4200 2650
 	-1   0    0    -1  
@@ -332,7 +332,7 @@ L C_Small C4
 U 1 1 57CD78C0
 P 5250 5950
 F 0 "C4" H 5260 6020 50  0000 L CNN
-F 1 "C_Small" H 5260 5870 50  0000 L CNN
+F 1 "100n" H 5260 5870 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5250 5950 50  0001 C CNN
 F 3 "" H 5250 5950 50  0000 C CNN
 	1    5250 5950
@@ -343,7 +343,7 @@ L CP_Small C3
 U 1 1 57CD7925
 P 4200 5950
 F 0 "C3" H 4210 6020 50  0000 L CNN
-F 1 "CP_Small" H 4210 5870 50  0000 L CNN
+F 1 "4u7" H 4210 5870 50  0000 L CNN
 F 2 "Capacitors_ThroughHole:C_Radial_D5_L6_P2.5" H 4200 5950 50  0001 C CNN
 F 3 "" H 4200 5950 50  0000 C CNN
 	1    4200 5950

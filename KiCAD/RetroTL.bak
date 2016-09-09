@@ -78,7 +78,7 @@ U 1 1 56A3B8FF
 P 4200 2650
 F 0 "J1" H 4150 2650 60  0000 C CNN
 F 1 "Arduino_ProMini_Angeld_Header" H 4200 2775 60  0000 C CNN
-F 2 "septillion_Arduino:arduino_pro_mini_(angle)_header(RetroTL)" V 4150 2650 60  0001 C CNN
+F 2 "septillion_Arduino:Arduino_ProMini_Angeled_Small++" V 4150 2650 60  0001 C CNN
 F 3 "" V 4150 2650 60  0000 C CNN
 	1    4200 2650
 	-1   0    0    -1  
@@ -363,9 +363,7 @@ $EndComp
 Wire Wire Line
 	1850 3300 2000 3300
 Wire Wire Line
-	2000 3250 2000 3300
-Wire Wire Line
-	2000 3300 2000 3550
+	2000 3250 2000 3550
 Wire Wire Line
 	2000 3250 2100 3250
 Wire Wire Line
@@ -380,15 +378,11 @@ Wire Wire Line
 Wire Wire Line
 	1850 3050 2100 3050
 Wire Wire Line
-	2700 3050 2800 3050
-Wire Wire Line
-	2800 3050 3650 3050
+	2700 3050 3650 3050
 Wire Wire Line
 	2700 3750 2800 3750
 Wire Wire Line
-	2700 3250 2900 3250
-Wire Wire Line
-	2900 3250 3550 3250
+	2700 3250 3550 3250
 Wire Wire Line
 	3550 3250 3550 3000
 Wire Wire Line
@@ -397,15 +391,9 @@ Connection ~ 2800 3050
 Wire Wire Line
 	4250 4300 4300 4300
 Wire Wire Line
-	5700 3300 5700 4000
+	5700 3300 5700 4800
 Wire Wire Line
-	5700 4000 5700 4700
-Wire Wire Line
-	5700 4700 5700 4800
-Wire Wire Line
-	5700 5650 5700 6150
-Wire Wire Line
-	5700 6150 5700 6300
+	5700 5650 5700 6300
 Wire Wire Line
 	5700 4700 5850 4700
 Wire Wire Line
@@ -423,27 +411,17 @@ Wire Wire Line
 Wire Wire Line
 	3600 4400 3650 4400
 Wire Wire Line
-	4300 4200 4300 4300
-Wire Wire Line
-	4300 4300 4300 4650
+	4300 4200 4300 4650
 Connection ~ 4300 4300
 Wire Wire Line
-	3050 5000 3400 5000
+	3050 5000 3850 5000
 Wire Wire Line
-	3400 5000 3600 5000
-Wire Wire Line
-	3600 5000 3850 5000
-Wire Wire Line
-	3600 4950 3600 5000
-Wire Wire Line
-	3600 5000 3600 5050
+	3600 4950 3600 5050
 Wire Wire Line
 	3400 5000 3400 4950
 Connection ~ 3600 5000
 Wire Wire Line
-	3400 4100 3400 4200
-Wire Wire Line
-	3400 4200 3400 4650
+	3400 4100 3400 4650
 Wire Wire Line
 	3400 4200 3650 4200
 Connection ~ 3400 4200
@@ -483,9 +461,7 @@ Wire Wire Line
 	2900 2950 2900 3250
 Connection ~ 2900 3250
 Wire Wire Line
-	2800 3050 2800 3750
-Wire Wire Line
-	2800 3750 2800 3950
+	2800 3050 2800 3950
 Connection ~ 2800 3750
 Wire Wire Line
 	3850 4000 3850 3950
@@ -500,26 +476,18 @@ Wire Wire Line
 Wire Wire Line
 	6100 5650 5700 5650
 Wire Wire Line
-	5150 5800 5250 5800
-Wire Wire Line
-	5250 5800 6100 5800
+	5150 5800 6100 5800
 Wire Wire Line
 	5250 5850 5250 5800
 Connection ~ 5250 5800
 Wire Wire Line
 	4200 5850 4200 5800
 Wire Wire Line
-	4100 5800 4200 5800
-Wire Wire Line
-	4200 5800 4350 5800
+	4100 5800 4350 5800
 Wire Wire Line
 	4200 6050 4200 6150
 Wire Wire Line
-	4200 6150 4750 6150
-Wire Wire Line
-	4750 6150 5250 6150
-Wire Wire Line
-	5250 6150 5700 6150
+	4200 6150 5700 6150
 Wire Wire Line
 	4750 6150 4750 6100
 Connection ~ 5700 6150
@@ -531,9 +499,7 @@ Connection ~ 4200 5800
 Wire Wire Line
 	4100 5800 4100 5750
 Wire Wire Line
-	5200 4650 5200 4600
-Wire Wire Line
-	5200 4600 5200 4300
+	5200 4650 5200 4300
 Wire Wire Line
 	5200 4600 5850 4600
 Connection ~ 5200 4600
@@ -551,15 +517,7 @@ F 3 "" H 5700 4800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Bus Line
-	4450 3450 4550 3450
-Wire Bus Line
-	4550 3450 4650 3450
-Wire Bus Line
-	4650 3450 4750 3450
-Wire Bus Line
-	4750 3450 4900 3450
-Wire Bus Line
-	4900 3450 5450 3450
+	4450 3450 5450 3450
 Entry Wire Line
 	4350 3350 4450 3450
 Entry Wire Line
@@ -579,9 +537,7 @@ Wire Wire Line
 Wire Bus Line
 	5450 3450 5450 5250
 Wire Bus Line
-	5450 5250 5750 5250
-Wire Bus Line
-	5750 5250 7950 5250
+	5450 5250 7950 5250
 Entry Wire Line
 	7850 5650 7950 5550
 Entry Wire Line
@@ -590,11 +546,7 @@ Entry Wire Line
 	7850 5950 7950 5850
 NoConn ~ 7600 6100
 Wire Bus Line
-	7950 5250 7950 5550
-Wire Bus Line
-	7950 5550 7950 5700
-Wire Bus Line
-	7950 5700 7950 5850
+	7950 5250 7950 5850
 Text Label 4350 3000 3    60   ~ 0
 SCK
 Text Label 4450 3000 3    60   ~ 0
@@ -618,9 +570,7 @@ MISO
 Entry Bus Bus
 	5750 5250 5850 5350
 Wire Bus Line
-	5850 5350 5850 5850
-Wire Bus Line
-	5850 5850 5850 6000
+	5850 5350 5850 6000
 Entry Wire Line
 	5850 6000 5950 6100
 Entry Wire Line

@@ -1060,7 +1060,7 @@
     (arrow2b (pts (xy 125 75.5) (xy 126.126504 74.913579)))
   )
   (gr_line (start 155.48 125.125) (end 164.37 125.125) (angle 90) (layer F.Mask) (width 1))
-  (gr_text GND (at 153.829 125.633 315) (layer F.SilkS)
+  (gr_text GND (at 153.829 125.633 315) (layer F.Mask)
     (effects (font (size 1 1.2) (thickness 0.2)) (justify right))
   )
   (gr_text "RetroTL Dimmer v2\nTimo Engelgeer\n2016" (at 147.225 87.025) (layer B.SilkS)
