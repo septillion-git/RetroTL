@@ -2,14 +2,16 @@
 #include <ClickEncoder.h>
 #include <TimerOne.h>
 
+#define SKETCH_DEBUG
+
 const byte SsrPin = A3;
 const byte DimPin = 3;
 const byte LedPin = 2;
 
 //rotary pinnne
-const byte RotaryA = A2;
-const byte RotaryB = A1;
-const byte RotaryBtn = A0;
+const byte RotaryA    = A2;
+const byte RotaryB    = A1;
+const byte RotaryBtn  = A0;
 
 //mode variable
 typedef enum Mode_e {
@@ -28,17 +30,21 @@ const unsigned int FadeTime = 5000;
 
 //TL variables
 FadeLed tlOut(DimPin);
-byte tlBrightness = 0;
 
 //Encoder variables
 ClickEncoder *encoder;
 bool pressed = 0;
 
-void timerIsr() {
+void inline timerIsr() {
   encoder->service();
 }
 
 void setup() {
+  #if defined(SKETCH_DEBUG)
+  Serial.begin(115200);
+  Serial.println(F("RetroTL started!"));
+  #endif
+  
   //setup ssr pin
   pinMode(SsrPin, OUTPUT);
   
@@ -50,6 +56,9 @@ void setup() {
   
   //setup encoder, 4th parameter = notches per step
   encoder = new ClickEncoder(RotaryA, RotaryB, RotaryBtn, 4);
+  
+  Timer1.initialize(1000);
+  Timer1.attachInterrupt(timerIsr); 
 }
 
 void loop() {
@@ -61,66 +70,57 @@ void loop() {
   
   //check rotary
   checkButton();
+  checkRotary();
 }
 
 void inline updateSsr(){
   //turn on the SSR when the brightness is >0
-  if(tlOut.getCurrent()){
-    digitalWrite(SsrPin, HIGH);
-  }
-  else{
-    digitalWrite(SsrPin, LOW);
-  }
+  digitalWrite(SsrPin, !!tlOut.getCurrent());
 }
 
 void checkButton(){
   //read button
   ClickEncoder::Button b = encoder->getButton();
   
-  if(mode == M_OFF){
-    if(b == ClickEncoder::Pressed){
-      mode = M_TL;
-    }
-    /*
-    else if( b == ClickEncoder::DoubleClicked){
-      mode = M_LED;
-    }
-    */
+  #if defined(SKETCH_DEBUG)
+  if(b != ClickEncoder::Open){
+    Serial.println(b);
   }
-  else{
-    if(b == ClickEncoder::Pressed){
-      mode = M_OFF;
-    }
-    /*
-    else if( b == ClickEncoder::DoubleClicked){
-      if(mode == M_LED){
-        mode = M_TL;
-      }
-      else{
-        mode++;
-      }
-    }
-    */
+  #endif
+  
+  if(b == ClickEncoder::Clicked){
+    modeOnOff();
+    Serial.println("go On/Off!");
+    
   }
 }
+
+
 
 void checkRotary(){
   int delta = encoder->getValue();
   
-  if(tlBrightness)
+  if(mode != M_OFF && delta != 0){
+    int temp = tlOut.getCurrent() + delta;
+    
+    if(temp > 255){
+      temp = 255;
+    }
+    else if(temp < 1){
+      temp = 1;
+    }
+    
+    tlOut.begin(temp);
+  }
 }
 
-void updateMode(){
-  static Mode prevMode = M_OFF;
-  
-  if(mode != prevMode){
-    if(mode == M_TL){
-      tlOut.set(DefaultBrightness);
-    }
-    else if(mode == M_OFF){
-      tlOut.off();
-    }
-  
-    prevMode = mode;
+void modeOnOff(){
+  if(mode == M_OFF){
+    mode = M_TL;
+    tlOut.set(DefaultBrightness);
+  }
+  else{
+    mode = M_OFF;
+    tlOut.off();
   }
 }
