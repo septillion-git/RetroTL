@@ -25,7 +25,8 @@ Mode mode = M_OFF;
 byte state = 0;
 
 //TL setings
-const byte DefaultBrightness = 150;
+const byte DefaultBrightness = 70;
+const byte MinBrightness = 40;
 const unsigned int FadeTime = 5000;
 
 //TL variables
@@ -103,12 +104,16 @@ void checkRotary(){
   if(mode != M_OFF && delta != 0){
     int temp = tlOut.getCurrent() + delta;
     
-    if(temp > 255){
-      temp = 255;
+    if(temp > tlOut.getBiggestStep()){
+      temp = tlOut.getBiggestStep();
     }
-    else if(temp < 1){
-      temp = 1;
+    else if(temp < MinBrightness){
+      temp = MinBrightness;
     }
+    
+    #if defined(SKETCH_DEBUG)
+    Serial.println(temp);
+    #endif
     
     tlOut.begin(temp);
   }
@@ -117,6 +122,7 @@ void checkRotary(){
 void modeOnOff(){
   if(mode == M_OFF){
     mode = M_TL;
+    //tlOut.begin(30);
     tlOut.set(DefaultBrightness);
   }
   else{
